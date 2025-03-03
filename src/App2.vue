@@ -1,10 +1,24 @@
 <script>
 export default {
-  setup() {
-    const name = "John Doe";
-    const status = "active";
-    const tasks = ['Task One', 'Task Two']
-  }
+  data() {
+    return {
+      name: "John Doe",
+      status: '',
+      tasks: ['Task one', 'Task two', 'Task three'],
+      link: "https://www.google.com"
+    };
+  },
+  methods: {
+    toggleStatus() {
+      if (this.status === "active") {
+        this.status = 'pending';
+      } else if (this.status === "pending") {
+        this.status= 'inactive'
+      } else {
+        this.status = 'active'
+      }
+      }
+    }
   }
 </script>
 
