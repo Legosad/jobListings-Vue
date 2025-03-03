@@ -1,10 +1,27 @@
 <script>
+import { ref } from 'vue';
 export default {
   setup() {
-    const name = "John Doe";
-    const status = "active";
-    const tasks = ['Task One', 'Task Two']
+    const name = ref("John Doe");
+    const status = ref("active");
+    const tasks = ref(['Task One', 'Task Two', 'Task Three']);
+    const toggleStatus = () => {
+      if (status.value === "active") {
+        status.value = 'pending';
+      } else if (status.value === "pending") {
+        status.value= 'inactive'
+      } else {
+        status.value = 'active'
+      }
+    }
+    return {
+      name, 
+      status, 
+      tasks,
+      toggleStatus
+    }
   }
+
   }
 </script>
 
