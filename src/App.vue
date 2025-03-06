@@ -8,5 +8,5 @@
   <Navbar />
   <Hero />
   <HomeCards />
-  <JobListings />
+  <JobListings :limit="3" :showButton="true"/>
 </template>
